@@ -1,0 +1,29 @@
+<div>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Id</th>
+      <th>Manufacturer</th>
+      <th>Model</th>
+      <th>Type</th>
+
+      <th>Year</th>
+      <th>Search</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr style="--primary-color:{{i.color.trim()}}" class="div-color" *ngFor="let i of cars">
+      <td>{{i.id}}</td>
+      <td>{{i.manufacturer}}</td>
+      <td>{{i.model}}</td>
+      <td>{{i.type}}</td>
+
+      <td>{{i.year}}</td>
+      <td>
+        <a href = "https://www.google.com/search?q={{i.manufacturer}} {{i.model}}">Search</a>
+      </td>
+      <td><button (click)="delete(i.id)">Delete</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
